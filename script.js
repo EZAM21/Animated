@@ -66,7 +66,7 @@ function displayData() {
                                 <h3>Score: ${d.score}</h3>
                                 <span><a href="${d.trailer.url}">Watch trailer</a></span>
 
-                        </div>`    
+                        </div>`;    
         });
 };
 
@@ -75,7 +75,7 @@ inputSearch.addEventListener("input", (e) => {
 })
 
 inputRange.addEventListener("input", (e) => {
-        rangeDisplay.innerHTML = e.target.value;
+        rangeDisplay.innerHTML = inputRange.value;
 
         displayData();
 });
@@ -87,4 +87,6 @@ sortBtn.addEventListener("click", (e) => {
         displayData();
 
 });
+
+
 
