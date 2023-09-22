@@ -34,8 +34,10 @@ const sortBtn = document.getElementById("sortBtn");
 let data = [];
 let sortMethod = true;
 
-async function fetchData(name) {
-        const request = await fetch("https://api.jikan.moe/v4/anime?q=" + name);
+const url = "https://api.jikan.moe/v4/anime?q=";
+
+async function fetchData() {
+        const request = await fetch("url+ inputSearch.value);
         data = await request.json();
         data = data.data;
 
@@ -49,9 +51,9 @@ function displayData() {
         data
         .sort((a, b) => {
                 if(sortMethod){
-                        return a.title.localeCompare(b.title)
+                        return a.score - b.score
                 } else {
-                        return b.title.localeCompare(a.title)
+                        return b.score - a.score
                 }
         })
         .slice(0, inputRange.value)
