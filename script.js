@@ -50,12 +50,11 @@ function displayData() {
         cardContainer.innerHTML = "";
         data
         .sort((a, b) => {
-                if(sortMethod){
-                        return a.score - b.score
-                } else {
-                        return b.score - a.score
+                if (sortMethod) {
+                  return a.score - b.score;
                 }
-        })
+                return b.score - a.score;
+              })
         .slice(0, inputRange.value)
         .map((d) => {
             cardContainer.innerHTML += `
@@ -71,7 +70,7 @@ function displayData() {
         });
 };
 
-inputSearch.addEventListener("change", (e) => {
+inputSearch.addEventListener("input", (e) => {
         fetchData(inputSearch.value);
 })
 
