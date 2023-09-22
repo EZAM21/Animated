@@ -37,7 +37,7 @@ let sortMethod = true;
 const url = "https://api.jikan.moe/v4/anime?q=";
 
 async function fetchData() {
-        const request = await fetch("url+ inputSearch.value);
+        const request = await fetch(url + inputSearch.value);
         data = await request.json();
         data = data.data;
 
